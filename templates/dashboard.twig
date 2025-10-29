@@ -1,0 +1,45 @@
+{% extends 'base.twig' %}
+
+{% block title %}Create Account
+{% endblock %}
+
+{% block content %}
+	<div class="min-h-[70vh] flex items-center justify-center">
+		<div class="w-full max-w-sm p-8 bg-white rounded-xl shadow-2xl border border-gray-100">
+			<h2 class="text-2xl font-bold text-center text-primary-blue mb-6">Create Account</h2>
+
+			{# Display a placeholder for error messages #}
+			{% if error_message %}
+				<div class="bg-red-100 text-red-700 p-3 rounded-lg mb-4 text-sm" role="alert">
+					{{ error_message }}
+				</div>
+			{% endif %}
+
+			<form action="/signup" method="POST">
+				<div class="mb-4">
+					<input type="text" id="name" name="name" placeholder="Full Name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue shadow-sm" aria-label="Full Name">
+				</div>
+				<div class="mb-4">
+					<input type="email" id="email" name="email" placeholder="Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue shadow-sm" aria-label="Email">
+				</div>
+				<div class="mb-4">
+					<input type="password" id="password" name="password" placeholder="Password" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue shadow-sm" aria-label="Password">
+				</div>
+				<div class="mb-6">
+					<input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary-blue focus:border-primary-blue shadow-sm" aria-label="Confirm Password">
+				</div>
+
+				<button type="submit" class="w-full bg-primary-blue text-white font-semibold py-2.5 rounded-lg hover:bg-blue-800 transition duration-150 shadow-md">
+					Sign Up
+				</button>
+			</form>
+
+			<p class="mt-4 text-center text-sm text-gray-600">
+				Already have an account?
+				<a href="/login" class="text-primary-blue hover:underline font-medium">Login</a>
+			</p>
+		</div>
+	</div>
+
+
+{% endblock %}

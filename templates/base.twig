@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}TicketApp
+			{% endblock %}
+		</title>
+		<script src="https://www.google.com/search?q=https://cdn.tailwindcss.com"></script>
+		<style>
+			/* Custom Tailwind configuration to match the 1440px requirement */
+			.max-w-1440 {
+				max-width: 1440px;
+			}
+
+			/* Set default font to Inter for consistency */
+			body {
+				font-family: 'Inter', sans-serif;
+				background-color: #f7f7f7; /* Light gray background */
+			}
+		</style>
+		<script>
+			tailwind.config = {
+theme: {
+extend: {
+colors: {
+'primary-blue': '#1D4ED8', /* Tailwind blue-700 */
+'status-open': '#10B981', /* Green-500 */
+'status-progress': '#F59E0B', /* Amber-500 */
+'status-closed': '#6B7280', /* Gray-500 */
+}
+}
+}
+}
+		</script>
+
+
+	</head>
+	<body
+		class="min-h-screen">
+
+		{# Top Navigation Bar #}
+		<nav class="bg-white shadow-md">
+			<div class="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+				<div class="text-xl font-bold text-primary-blue">HNG Tickets</div>
+				<div>
+					{# Logic here would determine if user is logged in to show Logout or Login/Signup #}
+					{% set logged_in = false %}
+					{% if logged_in %}
+						<a href="/logout" class="text-white bg-red-500 hover:bg-red-600 px-3 py-2 rounded-lg text-sm font-medium transition duration-150">Logout</a>
+					{% else %}
+						<a href="/login" class="text-white bg-primary-blue hover:bg-blue-800 px-3 py-2 rounded-lg text-sm font-medium transition duration-150">Login / Sign Up</a>
+					{% endif %}
+				</div>
+			</div>
+		</nav>
+
+		{# Main Content Area - Centered and constrained #}
+		<main class="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8 pb-12"> {% block content %}{% endblock %}
+			</main>
+
+			{# Fixed Footer #}
+			<footer class="bg-gray-800 text-white text-center p-4 mt-auto">
+				<div class="max-w-1440 mx-auto">
+					&copy; 2025 Multi-Framework Ticket App
+				</div>
+			</footer>
+
+
+		</body>
+	</html>

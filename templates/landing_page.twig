@@ -1,0 +1,73 @@
+{% extends 'base.twig' %}
+
+{% block title %}Welcome to TicketApp
+{% endblock %}
+
+{% block content %}
+	{# HERO SECTION - Wave Background #}
+	<div
+		class="relative overflow-hidden pt-12 pb-32 sm:pb-48 text-center">
+		{# Background Wave SVG #}
+		<div
+			class="absolute inset-x-0 top-0 h-4/5">
+			{# The wave SVG is layered at the bottom of this blue section, creating the wave effect #}
+			<div class="absolute inset-0 bg-primary-blue"></div>
+			<div class="absolute bottom-[-1px] w-full" style="height: 100px;">
+				<img src="/assets/wave.svg" alt="Wavy Background" class="w-full h-full object-cover">
+			</div>
+		</div>
+
+		{# Hero Content #}
+		<div class="relative z-10 pt-16">
+			<h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+				Welcome to TicketApp
+			</h1>
+			<p class="text-white/80 text-lg mb-8 max-w-lg mx-auto">
+				Your one-stop solution for managing support tickets efficiently.
+			</p>
+
+			<div class="flex justify-center space-x-4">
+				<a href="/signup" class="bg-white text-primary-blue hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300">
+					Get Started
+				</a>
+				<a href="/login" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition duration-300">
+					Login
+				</a>
+			</div>
+		</div>
+	</div>
+
+	{# FEATURES SECTION #}
+	<section class="py-16">
+		<h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Features</h2>
+
+		<div
+			class="grid md:grid-cols-3 gap-8">
+			{# Feature Card 1: Track Everything #}
+			<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
+				<h3 class="text-xl font-semibold text-gray-900 mb-3">Track Everything</h3>
+				<p class="text-gray-600">
+					Keep a clear view of all open, in-progress, and resolved tickets.
+				</p>
+			</div>
+
+			{# Feature Card 2: Collaborate #}
+			<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
+				<h3 class="text-xl font-semibold text-gray-900 mb-3">Collaborate</h3>
+				<p class="text-gray-600">
+					Work with your team to solve customer issues faster.
+				</p>
+			</div>
+
+			{# Feature Card 3: Stay Organized #}
+			<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
+				<h3 class="text-xl font-semibold text-gray-900 mb-3">Stay Organized</h3>
+				<p class="text-gray-600">
+					Easy-to-use interface to create, update, and manage your workflow.
+				</p>
+			</div>
+		</div>
+	</section>
+
+
+{% endblock %}
