@@ -11,8 +11,8 @@ $twig = new Environment($loader, ['cache' => false]);
 // Parse URI
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// Debug (remove later)
-echo "<pre>URI: '$uri'</pre>";
+// // Debug (remove later)
+// echo "<pre>URI: '$uri'</pre>";
 
 // Dummy data
 $dashboard_data = [
