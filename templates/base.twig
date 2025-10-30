@@ -39,10 +39,10 @@ colors: {
 
 	</head>
 	<body
-		class="min-h-screen">
+		class="min-h-screen flex flex-col min-h-screen">
 
 		{# Top Navigation Bar #}
-		<nav class="bg-white shadow-md">
+		<nav class="bg-white shadow-m w-full bg-white shadow-md">
 			<div class="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
 				<div class="text-xl font-bold text-primary-blue">HNG Tickets</div>
 				<div>
@@ -58,7 +58,7 @@ colors: {
 		</nav>
 
 		{# Main Content Area - Centered and constrained #}
-		<main class="max-w-1440 mx-auto px-4 sm:px-6 lg:px-8 pb-12"> {% block content %}{% endblock %}
+		<main class="max-w-1440 mx-auto"> {% block content %}{% endblock %}
 			</main>
 
 			{# Fixed Footer #}
